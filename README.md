@@ -37,11 +37,11 @@
 - 계산기는 문자열로 이루어진 계산식을 받아 사칙연산 기능을 제공한다. 
 - 사칙연산은 더하기, 빼기, 곱하기, 나누기로 연산자로 이루어진다.
 - 연산자는 문자열을 받아 연산자 객체를 반환한다.
-  - [ ] "+"를 받으면 PLUS Operator를 반환한다.
-  - [ ] "-"를 받으면 MINUS Operator를 반환한다.
-  - [ ] "*"를 받으면 MULTIPLY Operator를 반환한다.
-  - [ ] "/"를 받으면 DIVIDE Operator를 반환한다.
-  - [ ] 해당하지 않는 경우 IllegalArgumentException이 발생한다.
+  - [X] "+"를 받으면 PLUS Operator를 반환한다.
+  - [X] "-"를 받으면 MINUS Operator를 반환한다.
+  - [X] "*"를 받으면 MULTIPLY Operator를 반환한다.
+  - [X] "/"를 받으면 DIVIDE Operator를 반환한다.
+  - [X] 해당하지 않는 경우 IllegalArgumentException이 발생한다.
   - 더하기
     - 두 개의 숫자를 받아 더한 뒤 반환한다.
       - [X] 1, 2를 받으면 3을 반환한다.
