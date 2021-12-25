@@ -1,9 +1,9 @@
-package calculator;
+package calculator.domain;
 
 import java.util.Arrays;
 import java.util.function.BiFunction;
 
-import static calculator.Constants.*;
+import static calculator.util.Constants.*;
 
 public enum Operator {
     PLUS("+", Integer::sum),
@@ -25,14 +25,14 @@ public enum Operator {
         this.biFunction = biFunction;
     }
 
-    public static Operator ofString(String symbol) {
+    public static Operator from(String symbol) {
         return Arrays.stream(values())
                 .filter(s -> s.symbol.equals(symbol))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(ERROR_INVALID_OPERATOR + symbol));
     }
 
-    public int calculate(int left, int right) {
+    public int run(int left, int right) {
         return biFunction.apply(left, right);
     }
 }
