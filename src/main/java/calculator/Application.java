@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.domain.Formula;
+import calculator.domain.Calculator;
 
 public class Application {
 
@@ -8,8 +8,7 @@ public class Application {
 
     public static void main(String[] args) {
         String userInput = "2 + 3 * 4 / 2";
-        Formula formula = Formula.from(userInput);
-        int result = formula.execute();
+        int result = Calculator.execute(userInput);
         System.out.println(RESULT_GUIDE + result);
     }
 
