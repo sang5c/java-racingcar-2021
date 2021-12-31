@@ -1,14 +1,13 @@
-package racingcar;
-
-import java.util.Random;
+package racingcar.domain;
 
 public class Car {
+
+    private static final int CONDITION = 4;
 
     private int position;
 
     public int move() {
-        Random random = new Random();
-        if (random.nextInt(10) > 4) {
+        if (RandomGenerator.getRandomNumber() > CONDITION) {
             position++;
         }
         return position;
