@@ -14,6 +14,12 @@ public class Application {
         for (int i = 0; i < numberOfCars; i++) {
             cars.add(new Car());
         }
+
+        for (int i = 0; i < tryCount; i++) {
+            for (int k = 0; k < numberOfCars; k++) {
+                cars.get(k).move();
+            }
+        }
     }
 
 }
