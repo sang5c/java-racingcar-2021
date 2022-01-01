@@ -2,6 +2,7 @@ package racingcar;
 
 import racingcar.domain.Car;
 import racingcar.ui.InputView;
+import racingcar.ui.ResultView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +17,17 @@ public class Application {
             cars.add(new Car());
         }
 
+        List<List<Integer>> histories = new ArrayList<>();
         for (int i = 0; i < tryCount; i++) {
+            List<Integer> roundHistory = new ArrayList<>();
             for (int k = 0; k < numberOfCars; k++) {
-                cars.get(k).move();
+                roundHistory.add(cars.get(k).move());
             }
+            histories.add(roundHistory);
         }
+
+        ResultView.printResult(histories);
     }
+
 
 }
