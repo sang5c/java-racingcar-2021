@@ -3,7 +3,7 @@ package racingcar.domain;
 public class Car {
 
     private int position;
-    private MoveStrategy moveStrategy;
+    private final MoveStrategy moveStrategy;
 
     public Car(MoveStrategy moveStrategy) {
         this.moveStrategy = moveStrategy;
