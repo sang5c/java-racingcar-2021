@@ -2,12 +2,15 @@ package racingcar.domain;
 
 public class Car {
 
-    private static final int CONDITION = 4;
-
     private int position;
+    private MoveStrategy moveStrategy;
+
+    public Car(MoveStrategy moveStrategy) {
+        this.moveStrategy = moveStrategy;
+    }
 
     public int move() {
-        if (RandomGenerator.getRandomNumber() > CONDITION) {
+        if (moveStrategy.canMove()) {
             position++;
         }
         return position;
