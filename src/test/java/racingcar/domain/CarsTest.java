@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.dto.RoundHistory;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ class CarsTest {
     void moveAll() {
         int numberOfCars = 5;
         Cars cars = Cars.from(numberOfCars);
-        List<Integer> history = cars.moveAll();
-        assertThat(history.size()).isEqualTo(numberOfCars);
+        RoundHistory roundHistory = cars.moveAll();
+        assertThat(roundHistory.getPositions().size()).isEqualTo(numberOfCars);
     }
 
 }

@@ -1,6 +1,7 @@
 package racingcar;
 
 import racingcar.domain.Cars;
+import racingcar.dto.RoundHistory;
 import racingcar.ui.InputView;
 import racingcar.ui.ResultView;
 
@@ -14,7 +15,7 @@ public class Application {
 
         Cars cars = Cars.from(numberOfCars);
 
-        List<List<Integer>> histories = new ArrayList<>();
+        List<RoundHistory> histories = new ArrayList<>();
         for (int i = 0; i < tryCount; i++) {
             histories.add(cars.moveAll());
         }
