@@ -20,9 +20,9 @@ class CarTest {
     void move() {
         Car car = new Car("jason", () -> true);
         assertAll(
-                () -> assertThat(car.move()).isEqualTo(1),
-                () -> assertThat(car.move()).isEqualTo(2),
-                () -> assertThat(car.move()).isEqualTo(3)
+                () -> assertThat(car.move().getPosition()).isEqualTo(1),
+                () -> assertThat(car.move().getPosition()).isEqualTo(2),
+                () -> assertThat(car.move().getPosition()).isEqualTo(3)
         );
     }
 

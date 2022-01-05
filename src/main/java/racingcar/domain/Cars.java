@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import racingcar.dto.MoveResult;
 import racingcar.dto.RoundHistory;
 
 import java.util.List;
@@ -33,11 +34,11 @@ public class Cars {
     }
 
     public RoundHistory moveAll() {
-        List<Integer> positions = cars.stream()
+        List<MoveResult> moveResults = cars.stream()
                 .map(Car::move)
                 .collect(Collectors.toList());
 
-        return RoundHistory.from(positions);
+        return RoundHistory.from(moveResults);
     }
 
 }

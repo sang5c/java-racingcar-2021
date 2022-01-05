@@ -4,10 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.dto.RoundHistory;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CarsTest {
 
@@ -25,7 +22,7 @@ class CarsTest {
     void moveAll() {
         Cars cars = Cars.from(names);
         RoundHistory roundHistory = cars.moveAll();
-        assertThat(roundHistory.getPositions().size()).isEqualTo(3);
+        assertThat(roundHistory.getMoveResults().size()).isEqualTo(3);
     }
 
 }

@@ -1,16 +1,14 @@
 package racingcar.ui;
 
+import racingcar.dto.MoveResult;
 import racingcar.dto.RoundHistory;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ResultView {
+import static racingcar.util.Constants.*;
 
-    private static final String LINE_FEED_FOR_POSITION = "\n";
-    private static final String LINE_FEED_FOR_ROUND = "\n\n";
-    private static final String POSITION_STR = "-";
-    public static final String GUIDE_RESULT_STR = "실행 결과";
+public class ResultView {
 
     public static void printResult(List<RoundHistory> histories) {
         String historyStr = histories.stream()
@@ -22,9 +20,9 @@ public class ResultView {
     }
 
     private static String convertToStr(RoundHistory history) {
-        return history.getPositions()
-                .stream()
-                .map(POSITION_STR::repeat)
+        List<MoveResult> moveResults = history.getMoveResults();
+        return moveResults.stream()
+                .map(moveResult -> moveResult.getName() + COLON + POSITION_STR.repeat(moveResult.getPosition()))
                 .collect(Collectors.joining(LINE_FEED_FOR_POSITION));
     }
 

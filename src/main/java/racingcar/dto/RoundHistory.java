@@ -5,18 +5,18 @@ import java.util.List;
 
 public class RoundHistory {
 
-    private final List<Integer> positions;
+    private final List<MoveResult> moveResults;
 
-    private RoundHistory(List<Integer> positions) {
-        this.positions = positions;
+    private RoundHistory(List<MoveResult> moveResults) {
+        this.moveResults = moveResults;
     }
 
-    public static RoundHistory from(List<Integer> positions) {
-        return new RoundHistory(positions);
+    public static RoundHistory from(List<MoveResult> moveResults) {
+        return new RoundHistory(moveResults);
     }
 
-    public List<Integer> getPositions() {
-        return Collections.unmodifiableList(positions);
+    public List<MoveResult> getMoveResults() {
+        return Collections.unmodifiableList(moveResults);
     }
 
 }

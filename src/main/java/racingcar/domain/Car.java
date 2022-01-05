@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.dto.MoveResult;
+
 public class Car {
 
     private static final int MAX_NAME_LENGTH = 5;
@@ -22,11 +24,11 @@ public class Car {
         }
     }
 
-    public int move() {
+    public MoveResult move() {
         if (moveStrategy.canMove()) {
             position++;
         }
-        return position;
+        return new MoveResult(name, position);
     }
 
 }
