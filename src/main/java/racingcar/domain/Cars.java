@@ -24,6 +24,10 @@ public class Cars {
         return new Cars(cars);
     }
 
+    public static Cars from(CountOfCars numberOfCars) {
+        return from(numberOfCars.getCount());
+    }
+
     public RoundHistory moveAll() {
         List<Integer> positions = cars.stream()
                 .map(Car::move)
