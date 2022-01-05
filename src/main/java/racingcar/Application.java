@@ -12,10 +12,10 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        CountOfCars numberOfCars = new CountOfCars(InputView.inputCarCount());
+        String carNames = InputView.inputCarNames();
         TryCount tryCount = new TryCount(InputView.inputTryCount());
 
-        Cars cars = Cars.from(numberOfCars);
+        Cars cars = Cars.from(carNames);
 
         List<RoundHistory> histories = new ArrayList<>();
         while (tryCount.canTry()) {

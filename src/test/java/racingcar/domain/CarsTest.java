@@ -11,20 +11,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarsTest {
 
-    @DisplayName("Car 숫자를 받아 Cars를 생성한다")
+    private final String names = "pobi,crong,honux";
+
+    @DisplayName("Car 이름 문자열을 받아 Cars를 생성한다")
     @Test
     void from() {
-        Cars cars = Cars.from(5);
+        Cars cars = Cars.from(names);
         assertThat(cars).isNotNull();
     }
 
     @DisplayName("moveAll 메소드는 Car 수 크기의 히스토리 list를 반환한다.")
     @Test
     void moveAll() {
-        int numberOfCars = 5;
-        Cars cars = Cars.from(numberOfCars);
+        Cars cars = Cars.from(names);
         RoundHistory roundHistory = cars.moveAll();
-        assertThat(roundHistory.getPositions().size()).isEqualTo(numberOfCars);
+        assertThat(roundHistory.getPositions().size()).isEqualTo(3);
     }
 
 }
