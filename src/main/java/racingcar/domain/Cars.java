@@ -20,11 +20,19 @@ public class Cars {
 
     public static Cars from(String str) {
         validate(str);
-        List<String> carNames = List.of(str.split(NAME_SPLIT_REGEX));
-        List<Car> cars = carNames.stream()
+        List<String> carNames = splitNames(str);
+        List<Car> cars = createCars(carNames);
+        return new Cars(cars);
+    }
+
+    private static List<Car> createCars(List<String> carNames) {
+        return carNames.stream()
                 .map(name -> new Car(name, DEFAULT_MOVE_STRATEGY))
                 .collect(Collectors.toList());
-        return new Cars(cars);
+    }
+
+    private static List<String> splitNames(String str) {
+        return List.of(str.split(NAME_SPLIT_REGEX));
     }
 
     private static void validate(String str) {
