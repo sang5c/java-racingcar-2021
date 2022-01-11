@@ -1,7 +1,5 @@
 package racingcar.domain;
 
-import racingcar.dto.MoveResult;
-
 public class Car {
 
     private static final int MAX_NAME_LENGTH = 5;

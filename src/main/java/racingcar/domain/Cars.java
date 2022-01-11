@@ -1,8 +1,5 @@
 package racingcar.domain;
 
-import racingcar.dto.MoveResult;
-import racingcar.dto.RoundHistory;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

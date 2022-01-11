@@ -1,4 +1,4 @@
-package racingcar.dto;
+package racingcar.domain;
 
 public class MoveResult {
     private final String name;
