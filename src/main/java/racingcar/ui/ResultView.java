@@ -8,14 +8,13 @@ import java.util.stream.Collectors;
 import static racingcar.util.Constants.*;
 
 public class ResultView {
-
     public static void printResult(List<RoundHistory> histories, List<String> winners) {
         String historyStr = historyToStr(histories);
         String winnersStr = winnersToStr(winners);
 
         System.out.println(GUIDE_RESULT_STR);
         System.out.println(historyStr);
-        System.out.println(winnersStr);
+        System.out.println(winnersStr + GUIDE_WINNER_STR);
     }
 
     private static String winnersToStr(List<String> winners) {
