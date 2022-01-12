@@ -1,4 +1,7 @@
-package racingcar.domain;
+package racingcar.domain.car;
+
+import racingcar.domain.history.MoveResult;
+import racingcar.domain.move.MoveStrategy;
 
 public class Car {
 

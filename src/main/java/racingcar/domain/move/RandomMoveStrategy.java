@@ -1,4 +1,6 @@
-package racingcar.domain;
+package racingcar.domain.move;
+
+import racingcar.util.RandomGenerator;
 
 public class RandomMoveStrategy implements MoveStrategy {
 

@@ -1,14 +1,15 @@
 package racingcar.ui;
 
-import racingcar.domain.RoundHistory;
+import racingcar.domain.history.RoundHistories;
+import racingcar.domain.history.RoundHistory;
+import racingcar.domain.history.Winners;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
-import static racingcar.util.Constants.*;
+import static racingcar.ui.Constants.*;
 
 public class ResultView {
-    public static void printResult(List<RoundHistory> histories, List<String> winners) {
+    public static void printResult(RoundHistories histories, Winners winners) {
         String historyStr = historyToStr(histories);
         String winnersStr = winnersToStr(winners);
 
@@ -17,12 +18,13 @@ public class ResultView {
         System.out.println(winnersStr + GUIDE_WINNER_STR);
     }
 
-    private static String winnersToStr(List<String> winners) {
-        return String.join(", ", winners);
+    private static String winnersToStr(Winners winners) {
+        return String.join(", ", winners.getAll());
     }
 
-    private static String historyToStr(List<RoundHistory> histories) {
-        return histories.stream()
+    private static String historyToStr(RoundHistories histories) {
+        return histories.getAll()
+                .stream()
                 .map(ResultView::convertToStr)
                 .collect(Collectors.joining(LINE_FEED_FOR_ROUND));
     }

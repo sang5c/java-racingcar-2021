@@ -2,7 +2,7 @@ package racingcar.ui;
 
 import java.util.Scanner;
 
-import static racingcar.util.Constants.*;
+import static racingcar.ui.Constants.*;
 
 public class InputView {
 

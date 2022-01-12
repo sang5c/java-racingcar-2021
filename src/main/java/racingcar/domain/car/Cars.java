@@ -1,4 +1,8 @@
-package racingcar.domain;
+package racingcar.domain.car;
+
+import racingcar.domain.history.MoveResult;
+import racingcar.domain.history.RoundHistory;
+import racingcar.domain.move.RandomMoveStrategy;
 
 import java.util.List;
 import java.util.stream.Collectors;

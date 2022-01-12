@@ -2,8 +2,8 @@ package racingcar.dto;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.domain.MoveResult;
-import racingcar.domain.RoundHistory;
+import racingcar.domain.history.MoveResult;
+import racingcar.domain.history.RoundHistory;
 
 import java.util.List;
 

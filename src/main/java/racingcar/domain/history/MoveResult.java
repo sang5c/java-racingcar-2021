@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.history;
 
 public class MoveResult {
     private final String name;
@@ -15,6 +15,10 @@ public class MoveResult {
 
     public int getPosition() {
         return position;
+    }
+
+    public boolean isWinner(int position) {
+        return this.position == position;
     }
 
 }
