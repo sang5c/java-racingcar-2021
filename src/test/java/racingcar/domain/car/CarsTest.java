@@ -6,6 +6,7 @@ import racingcar.domain.car.Cars;
 import racingcar.domain.history.RoundHistory;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarsTest {
 
@@ -16,6 +17,13 @@ class CarsTest {
     void from() {
         Cars cars = Cars.from(names);
         assertThat(cars).isNotNull();
+    }
+
+    @DisplayName("빈 문자열로 cars를 생성하면 에러가 발생한다")
+    @Test
+    void invalidStr() {
+        assertThatThrownBy(() -> Cars.from(""))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("moveAll 메소드는 Car 수 크기의 히스토리 list를 반환한다.")

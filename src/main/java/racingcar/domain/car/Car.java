@@ -20,7 +20,7 @@ public class Car {
     }
 
     private void validate(String name) {
-        if (name.length() > MAX_NAME_LENGTH || name.isBlank()) {
+        if (name.isBlank() || name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_INVALID_CAR_NAME);
         }
     }
